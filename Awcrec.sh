@@ -11,8 +11,8 @@ cyan='\e[1;36m'
 white='\e[1;37m'
 
 # required file
-source Convert_SMTP
-source Create_login
+source files/Convert_SMTP
+source files/Create_login
 
 # for recive test email [ if found aws smtp work to send - change this if u want ]
 TO_MAIL="wehatetherules@gmail.com"
