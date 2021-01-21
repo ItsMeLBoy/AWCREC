@@ -1,0 +1,2 @@
+# AWCREC
+Amazon Credentials Checker
