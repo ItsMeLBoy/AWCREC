@@ -31,18 +31,17 @@ for pckg in "${depen[@]}"; do
 done
 
 # create dir + config awscli [ for user never run awscli ]
-if [[ ! -d ~/.aws ]] && [[ ! -d Results ]]; then
-	mkdir ~/.aws
-	mkdir Results
-	touch ~/.aws/config ~/.aws/credentials
-	echo -e "[default]\nregion = indonesian-people\noutput = json" > ~/.aws/config
-	echo -e "[default]\naws_access_key_id = LazyBoy\naws_secret_access_key = JavaGhostTeam" > ~/.aws/credentials
-else
+if [[ -d ~/.aws ]] && [[ -d Results ]]; then
 	touch response_out.tmp response_send.tmp
 	touch Results/SMTP_GOOD.txt
 	touch Results/SMTP_BAD.txt
 	touch Results/CONSOLE_ACCOUNT.txt
 	touch Results/CAN_ACCESS_IAM.txt
+else
+	mkdir ~/.aws Results
+	touch ~/.aws/config ~/.aws/credentials
+	echo -e "[default]\nregion = indonesian-people\noutput = json" > ~/.aws/config
+	echo -e "[default]\naws_access_key_id = LazyBoy\naws_secret_access_key = JavaGhostTeam" > ~/.aws/credentials
 fi
 
 # banner
