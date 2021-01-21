@@ -25,7 +25,7 @@ console_pass="Java#Gh0st"
 depen=("curl" "openssl" "aws")
 for pckg in "${depen[@]}"; do
     command -v $pckg >/dev/null 2>&1 || {
-        echo >&2 "${white}[ ${red}- ${white}] ${white}$pckg ${blue}: ${red}NOT INSTALLED${white}"
+        echo -e >&2 "${white}[ ${red}- ${white}] ${white}$pckg ${blue}: ${red}NOT INSTALLED${white}"
         exit
     }
 done
