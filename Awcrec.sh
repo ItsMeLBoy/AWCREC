@@ -55,13 +55,13 @@ echo -e "${white}   [ ${green}AWS Credentials Checker ${blue}- ${green}By ${blue
 
 # ask file + check
 echo -e "${white}[ ${red}INFO ${white}] ${blue}- ${red}ONLY INPUT LIST WITH FORMAT LIKE THIS ${blue}: ${green}AWS_KEY|AWS_SEC|AWS_REG${white}"
-read -p $'\e[1;37m[ \e[1;32m? \e[1;37m] Input aws credentials list \e[1;34m: \e[1;32m' ask_lst
+read -p $'\e[1;37m[ \e[1;32m? \e[1;37m] Input AWS Credentials List \e[1;34m: \e[1;32m' ask_lst
 
 if [[ ! -e $ask_lst ]]; then
 	echo -e "${white}[ ${red}ERROR ${white}] ${blue}- ${red}FILE NOT FOUND IN YOUR DIRECTORY${white}"
 	exit
 else
-	echo -e "${white}[ ${green}? ${white}] TOTAL AWS CREDENTIALS IN ${green}${ask_lst} ${blue}: ${green}$(< $ask_lst wc -l)\n${white}"
+	echo -e "${white}[ ${green}? ${white}] Total AWS Credentials in ${green}${ask_lst} ${blue}: ${green}$(< $ask_lst wc -l)\n${white}"
 fi
 
 # execute script
