@@ -38,7 +38,7 @@ if [[ -d ~/.aws ]] && [[ -d Results ]]; then
 	touch Results/CONSOLE_ACCOUNT.txt
 	touch Results/CAN_ACCESS_IAM.txt
 else
-	mkdir ~/.aws Results
+	mkdir ~/.aws Results &> /dev/null
 	touch ~/.aws/config ~/.aws/credentials
 	echo -e "[default]\nregion = indonesian-people\noutput = json" > ~/.aws/config
 	echo -e "[default]\naws_access_key_id = LazyBoy\naws_secret_access_key = JavaGhostTeam" > ~/.aws/credentials
