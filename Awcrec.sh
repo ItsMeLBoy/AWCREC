@@ -32,7 +32,7 @@ done
 
 # create dir + config awscli [ for user never run awscli ]
 if [[ ! -d ~/.aws ]] && [[ ! -d Results ]]; then
-	mkdir Results
+	mkdir ~/.aws Results
 	touch ~/.aws/config ~/.aws/credentials
 	echo -e "[default]\nregion = indonesian-people\noutput = json" > ~/.aws/config
 	echo -e "[default]\naws_access_key_id = LazyBoy\naws_secret_access_key = JavaGhostTeam" > ~/.aws/credentials
