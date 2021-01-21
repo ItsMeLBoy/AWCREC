@@ -1,4 +1,7 @@
+# !/bin/bash
+# source : https://www.lisenet.com/2014/convert-iam-secret-access-key-to-ses-smtp-password-in-bash/
 # func for convert aws secret key to smtp
+
 Convert_to_SMTP(){
     # Dont change anything on this line!
     PORT="587"
