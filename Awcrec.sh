@@ -67,7 +67,7 @@ fi
 
 # execute script
 for aws_cred in $(cat $ask_lst); do
-	# configure config + credentials awscli
+    # configure config + credentials awscli
     sed -i "2c aws_access_key_id = $(echo $aws_cred | cut -d "|" -f1)" ~/.aws/credentials
     sed -i "3c aws_secret_access_key = $(echo $aws_cred | cut -d "|" -f2)" ~/.aws/credentials
     sed -i "2c region = $(echo $aws_cred | cut -d "|" -f3)" ~/.aws/config
