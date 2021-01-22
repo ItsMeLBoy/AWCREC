@@ -4,7 +4,7 @@
 AWS_Create_Login_Profile(){
 	echo -e "${white}[ ${yellow}* ${white}] ${yellow}TRYING TO CREATE LOGIN PROFILE${white}"
 	if [[ $(aws iam list-users &> /dev/null; echo $?) -eq "0" ]]; then
-		echo "$aws_cred" >> CAN_ACCESS_IAM.txt
+		echo "$aws_cred" >> Results/CAN_ACCESS_IAM.txt
 		check_user=$(aws iam create-user --user-name "${console_user}" &> user_console.tmp; cat user_console.tmp | grep -o "User\|EntityAlreadyExists" | head -n1)
 		if [[ $check_user == "User" ]]; then
 			ARN_ID=$(cat user_console.tmp | grep -oP '"Arn": "\K[^"]+' | cut -d ":" -f5)
