@@ -1,5 +1,5 @@
 # !/bin/bash
-# func for create login profile
+# script for create login profile
 
 AWS_Create_Login_Profile(){
 	echo -e "${white}[ ${yellow}* ${white}] ${yellow}TRYING TO CREATE LOGIN PROFILE${white}"
