@@ -1,5 +1,5 @@
 # !/bin/bash
-# Contact : https://fb.me/n00b.me - https://t.me/noolep
+# Contact : https://fb.me/n00b.me - https://t.me/ItsMe_LBoy
 
 # color(bold)
 red='\e[1;31m'
